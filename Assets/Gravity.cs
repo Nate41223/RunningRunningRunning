@@ -18,11 +18,14 @@ public class Gravity : MonoBehaviour {
         if (transform.position.y <= 1f)
         {
             velocity = new Vector3();
+            //Vector3 posDifference = transform.position - new Vector3(transform.position.x, 1, transform.position) 
         } else
         {
             velocity += new Vector3(0, -1, 0);
-            transform.position += velocity * Time.deltaTime;
+            
         }
-        
+
+        transform.position += velocity * Time.deltaTime;
+
     }
 }

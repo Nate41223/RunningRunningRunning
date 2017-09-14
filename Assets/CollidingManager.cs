@@ -5,8 +5,8 @@ using UnityEngine;
 public class CollidingManager : MonoBehaviour {
 
     public AABBCollider player;
-    static public List<AABBCollider> Walls = new List<AABBCollider>();
-    static public List<AABBCollider> Floors = new List<AABBCollider>();
+    static public List<AABBCollider> walls = new List<AABBCollider>();
+    static public List<AABBCollider> floors = new List<AABBCollider>();
 
 
     // Use this for initialization
@@ -18,4 +18,16 @@ public class CollidingManager : MonoBehaviour {
 	void LateUpdate () {
         DoCollisionDetection();
 	}
+
+    private void DoCollisionDetection()
+    {
+        for (int i = walls.Count - 1; i >= 0; i--)
+        {
+            if(walls[i].CheckOverlap(player))
+            {
+                Destroy(walls[i].gameObject);
+            }
+
+        }
+    }
 }

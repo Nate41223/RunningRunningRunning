@@ -16,7 +16,7 @@ public class ObjectSpawning : MonoBehaviour {
     List<GameObject> Points = new List<GameObject>();
 
     // Use this for initialization
-    void Start () {
+    public void spawnObjects () {
 
         Points.Add(LeftBackSpawnPoint);
         Points.Add(LeftFrontSpawnPoint);

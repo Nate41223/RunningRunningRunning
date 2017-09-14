@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65560455715013446}
   - component: {fileID: 23164375064302578}
   - component: {fileID: 114332335850573404}
+  - component: {fileID: 114525288806075630}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -106,3 +107,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   halfSize: {x: 1, y: 0.5, z: 0.25}
+--- !u!114 &114525288806075630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974888448276130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7073bbf7ad6fd434a850d967363f81c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 114332335850573404}

@@ -28,15 +28,25 @@ public class TrackSpawning : MonoBehaviour {
 		
         while (chunks.Count < 5)
         {
-            Vector3 position = Vector3.back;
-
-            if(chunks.Count > 0)
-            {
-                position = chunks[chunks.Count - 1].transform.Find("Connector").position;
-            }
-
-            GameObject obj = Instantiate(TrackChunk, position, Quaternion.identity);
-            chunks.Add(obj);
+            spawnTrack();
         }
-	}
+    }
+
+    private void spawnTrack()
+    {
+        Vector3 position = Vector3.back;
+
+        if (chunks.Count > 0)
+        {
+            position = chunks[chunks.Count - 1].transform.Find("Connector").position;
+        }
+
+        GameObject obj = Instantiate(TrackChunk, position, Quaternion.identity);
+        chunks.Add(obj);
+
+        if (chunks.Count >= 3)
+        {
+            obj.GetComponent<ObjectSpawning>().spawnObjects();
+        }
+    }
 }
