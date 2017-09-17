@@ -524,6 +524,14 @@ MonoBehaviour:
   RightBackSpawnPoint: {fileID: 1862200532321492}
   RightFrontSpawnPoint: {fileID: 1342385021679638}
   Wall: {fileID: 1974888448276130, guid: 6361ddcab81d4bb4e867f32abd973ef7, type: 2}
+  PointsPowerUp: {fileID: 1019340983133868, guid: 520e5f8ec0d21844089f07b3f67b3fd6,
+    type: 2}
+  BreakPowerUp: {fileID: 1019340983133868, guid: 3eee6660993aa174f89df1ae00d5a8e6,
+    type: 2}
+  SlowPowerUp: {fileID: 1019340983133868, guid: 2b854c1aea8de9f4fa94d3d714aef28e,
+    type: 2}
+  AttractPowerUp: {fileID: 1019340983133868, guid: 8ce5e5d1b029b064f95ffa354215d18d,
+    type: 2}
 --- !u!114 &114796176034720632
 MonoBehaviour:
   m_ObjectHideFlags: 1
