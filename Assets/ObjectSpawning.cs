@@ -5,12 +5,26 @@ using UnityEngine;
 public class ObjectSpawning : MonoBehaviour {
 
     // Spawn Areas
-    public GameObject LeftBackSpawnPoint;  // List Index Number: 0
-    public GameObject LeftFrontSpawnPoint; // List Index Number: 1
-    public GameObject MiddleBackSpawnPoint; // List Index Number: 2
-    public GameObject MiddleFrontSpawnPoint; // List Index Number: 3
-    public GameObject RightBackSpawnPoint; // List Index Number: 4
-    public GameObject RightFrontSpawnPoint; // List Index Number: 5
+        // Lane One
+    public GameObject topLaneOneSpawnPoint;  // List Index Number: 0
+    public GameObject middleLaneOneSpawnPoint; // List Index Number: 1
+    public GameObject bottomLaneOneSpawnPoint; // List Index Number: 2
+        // Lane Two
+    public GameObject topLaneTwoSpawnPoint; // List Index Number: 3
+    public GameObject middleLaneTwoSpawnPoint; // List Index Number: 4
+    public GameObject bottomLaneTwoSpawnPoint; // List Index Number: 5
+        // Lane Three
+    public GameObject topLaneThreeSpawnPoint; // List Index Number: 6
+    public GameObject middleLaneThreeSpawnPoint; // List Index Number: 7
+    public GameObject bottomLaneThreeSpawnPoint; // List Index Number: 8
+        // Lane Four
+    public GameObject topLaneFourSpawnPoint; // List Index Number: 9
+    public GameObject middleLaneFourSpawnPoint; // List Index Number: 10
+    public GameObject bottomLaneFourSpawnPoint; // List Index Number: 11
+        // Lane Five
+    public GameObject topLaneFiveSpawnPoint; // List Index Number: 12
+    public GameObject middleLaneFiveSpawnPoint; // List Index Number: 13
+    public GameObject bottomLaneFiveSpawnPoint; // List Index Number: 14
 
     // Obstacles
     public GameObject Wall; // List Index Number: 0
@@ -27,12 +41,26 @@ public class ObjectSpawning : MonoBehaviour {
     public void spawnObjects () {
 
         // Adds all Spawn Areas to the Points List
-        Points.Add(LeftBackSpawnPoint);
-        Points.Add(LeftFrontSpawnPoint);
-        Points.Add(MiddleBackSpawnPoint);
-        Points.Add(MiddleFrontSpawnPoint);
-        Points.Add(RightBackSpawnPoint);
-        Points.Add(RightFrontSpawnPoint);
+            // Lane One
+        Points.Add(topLaneOneSpawnPoint);
+        Points.Add(middleLaneOneSpawnPoint);
+        Points.Add(bottomLaneOneSpawnPoint);
+            // Lane Two
+        Points.Add(topLaneTwoSpawnPoint);
+        Points.Add(middleLaneTwoSpawnPoint);
+        Points.Add(bottomLaneTwoSpawnPoint);
+            // Lane Three
+        Points.Add(topLaneThreeSpawnPoint);
+        Points.Add(middleLaneThreeSpawnPoint);
+        Points.Add(bottomLaneThreeSpawnPoint);
+            // Lane Four
+        Points.Add(topLaneFourSpawnPoint);
+        Points.Add(middleLaneFourSpawnPoint);
+        Points.Add(bottomLaneFourSpawnPoint);
+            // Lane Five
+        Points.Add(topLaneFiveSpawnPoint);
+        Points.Add(middleLaneFiveSpawnPoint);
+        Points.Add(bottomLaneFiveSpawnPoint);
 
         // Adds all Objects to the Obstacles List
         Obstacles.Add(Wall);
