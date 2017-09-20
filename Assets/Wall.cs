@@ -5,6 +5,7 @@ using UnityEngine;
 public class Wall : MonoBehaviour {
 
 	void Start () {
+        print(transform.position);
         CollidingManager.walls.Add(GetComponent<AABBCollider>());
 	}
 	

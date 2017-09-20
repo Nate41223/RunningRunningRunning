@@ -19,7 +19,7 @@ public class TrackSpawning : MonoBehaviour {
 
         if(chunks.Count > 0)
         {
-            if (Player.position.z - chunks[0].transform.position.z > 25)
+            if (Player.position.z - chunks[0].transform.position.z > 23)
             {
                 Destroy(chunks[0]);
                 chunks.RemoveAt(0);

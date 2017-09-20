@@ -17,7 +17,7 @@ public class LaneSwapping : MonoBehaviour {
     private Vector3 laneSwap = new Vector3(1, 0, 0);
     private Vector3 columnSwap = new Vector3(0, 1, 0);
 
-    private int Speed = 10;
+    private int Speed = 15;
     private bool canSwap = true;
 
     // Lanes
@@ -27,6 +27,7 @@ public class LaneSwapping : MonoBehaviour {
     private Vector3 rightLane = new Vector3(6, 2, 0); // List Index Number: 3
     private Vector3 rightOuterLane = new Vector3(8, 2, 0); // List Index Number: 4
 
+    // Columns
     private Vector3 bottomColumn = new Vector3(4, 0, 0); // List Index Number: 0
     private Vector3 middleColumn = new Vector3(4, 2, 0); // List Index Number: 1
     private Vector3 topColumn = new Vector3(4, 4, 0); // List Index Number: 2

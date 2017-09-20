@@ -9,6 +9,12 @@ public class AABBCollider : MonoBehaviour {
 
     public Vector3 halfSize;
 	
+    void Start()
+    {
+        min = transform.position - halfSize;
+        max = transform.position + halfSize;
+    }
+
 	// Update is called once per frame
 	void Update () {
         CalcEdges();

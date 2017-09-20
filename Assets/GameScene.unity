@@ -134,7 +134,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1012006684
 GameObject:
@@ -162,7 +162,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1384232651
 GameObject:
@@ -249,7 +249,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1384232651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 2, z: -6}
+  m_LocalPosition: {x: 4, y: 2, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -279,6 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55092c06d7265034b985ed36388bed9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallDestroySound: {fileID: 8300000, guid: 473f4b26aa246f64fa0a8c2d198d32af, type: 3}
+  powerUpSound: {fileID: 8300000, guid: 53f3c8d2a33dcda4dbc9d5baf7d27a61, type: 3}
   player: {fileID: 1924581702}
 --- !u!1 &1413419649
 GameObject:
@@ -343,7 +345,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 43055fc2b45b4b9408adb7989f000e48, type: 2}
+  - {fileID: 2100000, guid: 1f095d68ab3ab1b429edc2aafd21381c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -389,7 +391,7 @@ Transform:
   m_GameObject: {fileID: 1924581694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 2, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 0.75}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -426,7 +428,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1924581694}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c36df47075452e489b4c1423e2d82fa, type: 3}
   m_Name: 
@@ -442,4 +444,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b1e74db2300264687da5ea6aea9191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  halfSize: {x: 0.5, y: 0.5, z: 0.5}
+  halfSize: {x: 0.625, y: 0.625, z: 0.625}

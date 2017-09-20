@@ -37,6 +37,10 @@ public class ObjectSpawning : MonoBehaviour {
     List<GameObject> Points = new List<GameObject>();
     List<GameObject> Obstacles = new List<GameObject>();
 
+    // gets the amount of objects it wants to spawn for that chunk
+
+    
+
     // Use this for initialization
     public void spawnObjects () {
 
@@ -69,11 +73,8 @@ public class ObjectSpawning : MonoBehaviour {
         Obstacles.Add(SlowPowerUp);
         Obstacles.Add(AttractPowerUp);
 
-        // gets the amount of objects it wants to spawn for that chunk
-        int amount = Random.Range(1, Points.Count + 1); // max is exclusive
-        int amountOfPowerUp = 1;
-
-        print(amount);
+        int amount = Random.Range(4, Points.Count + 1); // max is exclusive
+        int amountOfPowerUp = Random.Range(0, 3);
 
         while (amount > 0)
         {
@@ -87,11 +88,13 @@ public class ObjectSpawning : MonoBehaviour {
             // if isPowerUp is less than 25 AND we havnt spawned a powerup on this trackpiece yet, then spawn a powerup in this location
             // OR if this is the last object spawning on this track piece AND we havnt spawned a powerup on this trackpiece yet, then spawn a powerup in this location
             // ELSE spawn a wall in this location
-            if (isPowerUp < 25 && amountOfPowerUp != 0 || amount != 1 && amountOfPowerUp != 0)
+            if (isPowerUp < 25 && amountOfPowerUp != 0 || amount <= amountOfPowerUp && amountOfPowerUp != 0)
             {
-                var newPowerUp = Instantiate(determinePowerUp(), position, Quaternion.identity);
+                int powerUp = Random.Range(1, Obstacles.Count);
+                var newPowerUp = Instantiate(getPowerUp(powerUp), position, Quaternion.identity);
                 newPowerUp.transform.parent = transform;
-                amountOfPowerUp = 0;
+                newPowerUp.GetComponent<PowerUp>().powerUpType = powerUp;
+                amountOfPowerUp--;
             } else
             {
                 var newWall = Instantiate(Wall, position, Quaternion.identity);
@@ -103,15 +106,15 @@ public class ObjectSpawning : MonoBehaviour {
             amount--;
             
         }
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    public GameObject determinePowerUp()
+    public GameObject getPowerUp(int powerUpIndexNumber)
     {
-        return Obstacles[Random.Range(1, Obstacles.Count)]; // max is exclusive
+        return Obstacles[powerUpIndexNumber]; // max is exclusive
     }
 }
