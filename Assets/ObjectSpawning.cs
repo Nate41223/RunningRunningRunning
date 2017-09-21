@@ -73,7 +73,7 @@ public class ObjectSpawning : MonoBehaviour {
         Obstacles.Add(SlowPowerUp);
         Obstacles.Add(AttractPowerUp);
 
-        int amount = Random.Range(4, Points.Count + 1); // max is exclusive
+        int amount = Random.Range(4, Points.Count); // max is exclusive
         int amountOfPowerUp = Random.Range(0, 3);
 
         while (amount > 0)

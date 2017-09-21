@@ -11,7 +11,6 @@ public class CollidingManager : MonoBehaviour {
     static public List<AABBCollider> walls = new List<AABBCollider>();
     static public List<AABBCollider> powerUps = new List<AABBCollider>();
 
-
     // Use this for initialization
     void Start () {
 		
@@ -32,6 +31,13 @@ public class CollidingManager : MonoBehaviour {
             {
                 Destroy(walls[i].gameObject);
                 AudioSource.PlayClipAtPoint(wallDestroySound, transform.position);
+                if (GamePlayManager.isInvincible == true)
+                {
+                    GamePlayManager.points += 50;
+                } else
+                {
+                    GamePlayManager.playerLives--;
+                }
             }
 
         }
@@ -40,6 +46,7 @@ public class CollidingManager : MonoBehaviour {
         {
             if (powerUps[i].CheckOverlap(player))
             {
+                powerUps[i].gameObject.GetComponent<PowerUp>().applyPowerUpChanges();
                 Destroy(powerUps[i].gameObject);
                 AudioSource.PlayClipAtPoint(powerUpSound, transform.position);
             }

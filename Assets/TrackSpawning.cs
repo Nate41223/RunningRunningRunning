@@ -7,7 +7,7 @@ public class TrackSpawning : MonoBehaviour {
     public GameObject TrackChunk;
     public Transform Player;
 
-    List<GameObject> chunks = new List<GameObject>();
+    public List<GameObject> chunks = new List<GameObject>();
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +26,7 @@ public class TrackSpawning : MonoBehaviour {
             }
         }
 		
-        while (chunks.Count < 5)
+        while (chunks.Count < 4)
         {
             spawnTrack();
         }
@@ -44,7 +44,7 @@ public class TrackSpawning : MonoBehaviour {
         GameObject obj = Instantiate(TrackChunk, position, Quaternion.identity);
         chunks.Add(obj);
 
-        if (chunks.Count >= 3)
+        if (chunks.Count > 3)
         {
             obj.GetComponent<ObjectSpawning>().spawnObjects();
         }
