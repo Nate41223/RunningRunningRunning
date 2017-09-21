@@ -23,43 +23,15 @@ public class GamePlayManager {
 
     public static void UpdateGame()
     {
-        if (points >= nextPointsThreshold)
-        {
-            nextPointsThreshold += 1000;
-            playerLives += 2;
-            level++;
-
-            int powerUpsLevelAmount = breakPowerUps + slowPowerUps + attractPowerUps;
-            points += powerUpsLevelAmount * 50;
-            breakPowerUps = 0;
-            slowPowerUps = 0;
-            attractPowerUps = 0;
-
-            if (baseSpeed == speed)
-            {
-                baseSpeed += 2;
-                speed += 2;
-            } else
-            {
-                baseSpeed += 2;
-            }
-
-            for (int i = CollidingManager.walls.Count - 1; i >= 0; i--)
-            {
-                CollidingManager.Destroy(CollidingManager.walls[i].gameObject);
-            }
-
-            for (int i = CollidingManager.powerUps.Count - 1; i >= 0; i--)
-            {
-                CollidingManager.Destroy(CollidingManager.powerUps[i].gameObject);
-            }
-        }
+        checkForLevelAdvancement();
 
         if (playerLives <= 0)
         {
             onPlayerDeath();
         }
     }
+
+    
 
     public static void onPlayerDeath()
     {
@@ -84,5 +56,43 @@ public class GamePlayManager {
 
     isAttractive = false;
     isInvincible = false;
+    }
+
+    private static void checkForLevelAdvancement()
+    {
+        if (points >= nextPointsThreshold)
+        {
+            nextPointsThreshold += 1000;
+            playerLives += 2;
+            level++;
+
+            int powerUpsLevelAmount = breakPowerUps + slowPowerUps + attractPowerUps;
+            points += powerUpsLevelAmount * 50;
+            breakPowerUps = 0;
+            slowPowerUps = 0;
+            attractPowerUps = 0;
+
+            if (baseSpeed == speed)
+            {
+                baseSpeed += 2;
+                speed += 2;
+            }
+            else
+            {
+                baseSpeed += 2;
+            }
+
+            for (int i = CollidingManager.walls.Count - 1; i >= 0; i--)
+            {
+                CollidingManager.Destroy(CollidingManager.walls[i].gameObject);
+            }
+
+            for (int i = CollidingManager.powerUps.Count - 1; i >= 0; i--)
+            {
+                CollidingManager.Destroy(CollidingManager.powerUps[i].gameObject);
+            }
+
+
+        }
     }
 }
