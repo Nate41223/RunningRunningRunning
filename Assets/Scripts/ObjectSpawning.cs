@@ -33,13 +33,8 @@ public class ObjectSpawning : MonoBehaviour {
     public GameObject SlowPowerUp; // List Index Number: 3
     public GameObject AttractPowerUp; // List Index Number: 4
 
-
     List<GameObject> Points = new List<GameObject>();
     List<GameObject> Obstacles = new List<GameObject>();
-
-    // gets the amount of objects it wants to spawn for that chunk
-
-    
 
     // Use this for initialization
     public void spawnObjects () {
@@ -73,6 +68,7 @@ public class ObjectSpawning : MonoBehaviour {
         Obstacles.Add(SlowPowerUp);
         Obstacles.Add(AttractPowerUp);
 
+        // gets the amount of objects it wants to spawn for that chunk
         int amount = Random.Range(4, Points.Count); // max is exclusive
         int amountOfPowerUp = Random.Range(0, 3);
 
@@ -107,11 +103,6 @@ public class ObjectSpawning : MonoBehaviour {
             
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public GameObject getPowerUp(int powerUpIndexNumber)
     {

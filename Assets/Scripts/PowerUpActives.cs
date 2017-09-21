@@ -26,7 +26,7 @@ public class PowerUpActives : MonoBehaviour {
             if (isPowerUpActive == false && GamePlayManager.slowPowerUps > 0)
             {
                 GetComponent<MeshRenderer>().material = slowPower;
-                GamePlayManager.speed = GamePlayManager.speed/2;
+                GamePlayManager.speed = 0;
                 powerUpType = 1;
                 isPowerUpActive = true;
                 buffTimer = 2f;

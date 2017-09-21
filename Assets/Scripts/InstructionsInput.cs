@@ -4,13 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class InstructionsInput : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-        
-    }
 	
-	// Update is called once per frame
+	// Controls Instructions Input Screen
+    // SPACE to play
 	void Update () {
         if (Input.GetButtonDown("Jump"))
         {

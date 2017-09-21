@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class backgroundMusic : MonoBehaviour {
 
-
-	// Use this for initialization
+	// Starts the background music for the game, and can't be destroyed on a scene switch
 	void Start () {
         DontDestroyOnLoad(gameObject);
         GetComponent<AudioSource>().Play();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

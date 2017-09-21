@@ -942,8 +942,6 @@ GameObject:
   - component: {fileID: 1924581696}
   - component: {fileID: 1924581695}
   - component: {fileID: 1924581699}
-  - component: {fileID: 1924581701}
-  - component: {fileID: 1924581700}
   - component: {fileID: 1924581702}
   - component: {fileID: 1924581703}
   - component: {fileID: 1924581704}
@@ -1039,28 +1037,6 @@ MonoBehaviour:
   previousLane: 2
   column: 1
   previousColumn: 1
---- !u!114 &1924581700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1924581694}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931b2fc88387c0541b9661ab87b987b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1924581701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1924581694}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c36df47075452e489b4c1423e2d82fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1924581702
 MonoBehaviour:
   m_ObjectHideFlags: 0

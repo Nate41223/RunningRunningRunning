@@ -12,6 +12,7 @@ public class PowerUp : MonoBehaviour {
     public GameObject AttractPowerUp;  List Index Number: 4
     **/
 
+    // holds which type of powerup it is
     public int powerUpType;
 
     private bool moveTowardsPlayer = false;

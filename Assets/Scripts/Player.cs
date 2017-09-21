@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
-	// Update is called once per frame
+	// Updates player position in the Gmeplay Manager script every frame
 	void Update () {
         GamePlayManager.playerPosition = transform.position;
     }

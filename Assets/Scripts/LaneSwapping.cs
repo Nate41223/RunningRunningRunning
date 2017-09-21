@@ -35,7 +35,7 @@ public class LaneSwapping : MonoBehaviour {
     List<Vector3> Lanes = new List<Vector3>();
     List<Vector3> Columns = new List<Vector3>();
 
-    // Use this for initialization
+    // Updates Viable Lane and Column location at the start
     void Start () {
         Lanes.Add(leftOuterLane);
         Lanes.Add(leftLane);
@@ -95,13 +95,10 @@ public class LaneSwapping : MonoBehaviour {
                 }
             }
         }
-
+        // Calls the function to updates viable Lane and Column location
         updateLaneColumnPosition();
 
-        //leftLane.y = transform.position.y;
-        //middleLane.y = transform.position.y;
-        //rightLane.y = transform.position.y;
-
+        // updates player movement based upon Input
         if (lane != previousLane || column != previousColumn)
         {
             moveTowardLane();
@@ -109,21 +106,9 @@ public class LaneSwapping : MonoBehaviour {
             checkLaneAlignment();
             checkColumnAlignment();
         }
-
-        /**
-        if (lane == 1)
-        {
-            transform.position = new Vector3(-2, 1, -6);
-        } else if (lane == 2)
-        {
-            transform.position = new Vector3(0, 1, -6);
-        } else if (lane == 3)
-        {
-            transform.position = new Vector3(2, 1, -6);
-        }
-        **/
     }
 
+    // updates viable Lane and Column location
     void updateLaneColumnPosition()
     {
         Lanes[0] = new Vector3(0, 0 + 2 * column, 0); // List Index Number: 0
@@ -137,17 +122,21 @@ public class LaneSwapping : MonoBehaviour {
         Columns[2] = new Vector3(0 + 2 * lane, 4, 0); // List Index Number: 2
     }
 
+    // moves the player if lane does not equal the previous lane
     void moveTowardLane()
     {
         if (lane > previousLane) transform.position += Speed * laneSwap * Time.deltaTime;
         if (lane < previousLane) transform.position -= Speed * laneSwap * Time.deltaTime;
     }
+
+    // moves the player if column does not equal the previous column
     void moveTowardColumn()
     {
         if (column > previousColumn) transform.position += Speed * columnSwap * Time.deltaTime;
         if (column < previousColumn) transform.position -= Speed * columnSwap * Time.deltaTime;
     }
 
+    // checks for column alignment to see if the player is lined up with the right column yet
     void checkColumnAlignment()
     {
         if (column == 0 && transform.position.y < Columns[column].y)
@@ -176,6 +165,7 @@ public class LaneSwapping : MonoBehaviour {
         }
     }
 
+    // checks for lane alignment to see if the player is lined up with the right lane yet
     void checkLaneAlignment()
     {
         if (lane == 0 && transform.position.x < Lanes[lane].x)

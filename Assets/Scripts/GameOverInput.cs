@@ -4,13 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverInput : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
-	// Update is called once per frame
+	// Controls the Input for the Game Over screen
+    // SPACE to play again
+    // ESC to quit the game
 	void Update () {
 		if (Input.GetButtonDown("Jump"))
         {

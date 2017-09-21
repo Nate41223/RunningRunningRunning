@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 33806235502792604}
   - component: {fileID: 135142823690069106}
   - component: {fileID: 23310008979826972}
-  - component: {fileID: 114070366166470370}
-  - component: {fileID: 114382409486348448}
+  - component: {fileID: 114311664471979934}
+  - component: {fileID: 114020936721774574}
   m_Layer: 0
-  m_Name: PointsPowerUp
+  m_Name: AttractPowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0e04309452f51934088904c131591107, type: 2}
+  - {fileID: 2100000, guid: ec0cc6ba44a3cd64982f2600f308330b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -296,7 +296,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1274717243219624}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114070366166470370
+--- !u!114 &114020936721774574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019340983133868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e22aa82985a4c54ea87ccad19622eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpType: 0
+--- !u!114 &114311664471979934
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -308,17 +320,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   halfSize: {x: 0.5, y: 0.5, z: 0.5}
---- !u!114 &114382409486348448
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019340983133868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e22aa82985a4c54ea87ccad19622eb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135040852201425252
 SphereCollider:
   m_ObjectHideFlags: 1
