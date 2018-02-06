@@ -32,7 +32,6 @@ public class PowerUpActives : MonoBehaviour {
                 buffTimer = 2f;
                 GamePlayManager.slowPowerUps--;
                 GamePlayManager.points += 50;
-                
             }
         } else if (Input.GetKeyDown(KeyCode.Alpha2)) // Break PowerUp  Type: 2
         {
@@ -46,6 +45,9 @@ public class PowerUpActives : MonoBehaviour {
                 GamePlayManager.isInvincible = true;
                 GamePlayManager.breakPowerUps--;
                 GamePlayManager.points += 50;
+
+				ChangeDraftColor (breakPower.color);
+				ParticleSystemsManager.UpdateDraft();
             }
         } else if (Input.GetKeyDown(KeyCode.Alpha3)) // Attract PowerUp  Type: 3
         {
@@ -58,6 +60,8 @@ public class PowerUpActives : MonoBehaviour {
                 GamePlayManager.isAttractive = true;
                 GamePlayManager.attractPowerUps--;
                 GamePlayManager.points += 50;
+
+				ChangeDraftColor (attractPower.color);
             }
         }
 
@@ -84,9 +88,21 @@ public class PowerUpActives : MonoBehaviour {
                         GamePlayManager.isAttractive = false;
                         break;
                 }
+
+				ParticleSystem ps = ParticleSystemsManager.particleSystems[0].GetComponent<ParticleSystem>();
+				var main = ps.main;
+				main.startColor = playerColor.color;
+				ParticleSystemsManager.UpdateDraft();
+
                 powerUpType = 0;
                 isPowerUpActive = false;
             }
         }
     }
+
+	private void ChangeDraftColor(Color color) {
+		ParticleSystem ps = ParticleSystemsManager.particleSystems [0].GetComponent<ParticleSystem> ();
+		var main = ps.main;
+		main.startColor = color;
+	}
 }

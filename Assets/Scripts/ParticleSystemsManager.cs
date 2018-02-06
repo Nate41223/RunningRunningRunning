@@ -8,21 +8,20 @@ public class ParticleSystemsManager : MonoBehaviour {
 
     public static int previouslevel;
 
-
-    public List<GameObject> particleSystems = new List<GameObject>();
+    public static List<GameObject> particleSystems = new List<GameObject>();
 
     // Use this for initialization
     void Start () {
         previouslevel = GamePlayManager.level;
+		SpawnDraft();
     }
 	
 	void Update () {
         CheckParticleLife();
 
-        
         if (GamePlayManager.level != previouslevel)
         {
-            SpawnDraft();
+            UpdateDraft();
             previouslevel = GamePlayManager.level;
         }
     }
@@ -30,8 +29,17 @@ public class ParticleSystemsManager : MonoBehaviour {
     public void SpawnDraft()
     {
         GameObject obj = Instantiate(draft, transform);
-        particleSystems.Add(obj);
+		ParticleSystem ps = obj.GetComponent<ParticleSystem>();
+		var main = ps.main;
+		main.startSpeed = GamePlayManager.speed;
+		particleSystems.Add (obj);
     }
+
+	public static void UpdateDraft() {
+		ParticleSystem ps = particleSystems[0].GetComponent<ParticleSystem>();
+		var main = ps.main;
+		main.startSpeed = GamePlayManager.speed;
+	}
 
     private void CheckParticleLife()
     {
