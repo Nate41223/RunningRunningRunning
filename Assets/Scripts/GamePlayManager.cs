@@ -96,7 +96,6 @@ public class GamePlayManager {
                 CollidingManager.Destroy(CollidingManager.powerUps[i].gameObject);
             }
 
-
         }
     }
 }
