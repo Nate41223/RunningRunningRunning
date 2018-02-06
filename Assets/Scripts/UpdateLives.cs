@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpdateLives : MonoBehaviour {
 
-    TextMesh text;
+    Text text;
 
     // Use this for initialization
     void Start()
     {
-        text = GetComponent<TextMesh>();
-        text.text = GamePlayManager.playerLives.ToString();
+        text = GetComponent<Text>();
+        text.text = "Lives: " + GamePlayManager.playerLives.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.text = GamePlayManager.playerLives.ToString();
+        text.text = "Lives: " + GamePlayManager.playerLives.ToString();
     }
 }
