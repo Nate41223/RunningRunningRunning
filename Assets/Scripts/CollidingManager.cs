@@ -37,7 +37,7 @@ public class CollidingManager : MonoBehaviour {
                     GamePlayManager.points += 50;
                 } else
                 {
-                    GamePlayManager.playerLives--;
+                    //GamePlayManager.playerLives--;
                 }
             }
 

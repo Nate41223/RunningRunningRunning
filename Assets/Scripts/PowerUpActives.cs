@@ -32,6 +32,8 @@ public class PowerUpActives : MonoBehaviour {
                 buffTimer = 2f;
                 GamePlayManager.slowPowerUps--;
                 GamePlayManager.points += 50;
+
+                ParticleSystemsManager.UpdateDraft();
             }
         } else if (Input.GetKeyDown(KeyCode.Alpha2)) // Break PowerUp  Type: 2
         {

@@ -33,40 +33,15 @@ public class ObjectSpawning : MonoBehaviour {
     public GameObject SlowPowerUp; // List Index Number: 3
     public GameObject AttractPowerUp; // List Index Number: 4
 
+    // Holds the location of spawn points
     List<GameObject> Points = new List<GameObject>();
+    // Holds obstacles/powerups that can spawn
     List<GameObject> Obstacles = new List<GameObject>();
 
-    // Use this for initialization
-    public void spawnObjects () {
-
-        // Adds all Spawn Areas to the Points List
-            // Lane One
-        Points.Add(topLaneOneSpawnPoint);
-        Points.Add(middleLaneOneSpawnPoint);
-        Points.Add(bottomLaneOneSpawnPoint);
-            // Lane Two
-        Points.Add(topLaneTwoSpawnPoint);
-        Points.Add(middleLaneTwoSpawnPoint);
-        Points.Add(bottomLaneTwoSpawnPoint);
-            // Lane Three
-        Points.Add(topLaneThreeSpawnPoint);
-        Points.Add(middleLaneThreeSpawnPoint);
-        Points.Add(bottomLaneThreeSpawnPoint);
-            // Lane Four
-        Points.Add(topLaneFourSpawnPoint);
-        Points.Add(middleLaneFourSpawnPoint);
-        Points.Add(bottomLaneFourSpawnPoint);
-            // Lane Five
-        Points.Add(topLaneFiveSpawnPoint);
-        Points.Add(middleLaneFiveSpawnPoint);
-        Points.Add(bottomLaneFiveSpawnPoint);
-
-        // Adds all Objects to the Obstacles List
-        Obstacles.Add(Wall);
-        Obstacles.Add(PointsPowerUp);
-        Obstacles.Add(BreakPowerUp);
-        Obstacles.Add(SlowPowerUp);
-        Obstacles.Add(AttractPowerUp);
+    public void SpawnObjects ()
+    {
+        // adds all the game objects into an array for later reference
+        AddObjectsToArray();
 
         // gets the amount of objects it wants to spawn for that chunk
         int amount = Random.Range(4, Points.Count); // max is exclusive
@@ -87,11 +62,12 @@ public class ObjectSpawning : MonoBehaviour {
             if (isPowerUp < 25 && amountOfPowerUp != 0 || amount <= amountOfPowerUp && amountOfPowerUp != 0)
             {
                 int powerUp = Random.Range(1, Obstacles.Count);
-                var newPowerUp = Instantiate(getPowerUp(powerUp), position, Quaternion.identity);
+                var newPowerUp = Instantiate(GetPowerUp(powerUp), position, Quaternion.identity);
                 newPowerUp.transform.parent = transform;
                 newPowerUp.GetComponent<PowerUp>().powerUpType = powerUp;
                 amountOfPowerUp--;
-            } else
+            }
+            else
             {
                 var newWall = Instantiate(Wall, position, Quaternion.identity);
                 newWall.transform.parent = transform;
@@ -100,11 +76,43 @@ public class ObjectSpawning : MonoBehaviour {
             // remove this point from the List of points so that only one object can spawn in that location
             Points.RemoveAt(spawnLocation);
             amount--;
-            
+
         }
     }
 
-    public GameObject getPowerUp(int powerUpIndexNumber)
+    private void AddObjectsToArray()
+    {
+        // Adds all Spawn Areas to the Points List
+        // Lane One
+        Points.Add(topLaneOneSpawnPoint);
+        Points.Add(middleLaneOneSpawnPoint);
+        Points.Add(bottomLaneOneSpawnPoint);
+        // Lane Two
+        Points.Add(topLaneTwoSpawnPoint);
+        Points.Add(middleLaneTwoSpawnPoint);
+        Points.Add(bottomLaneTwoSpawnPoint);
+        // Lane Three
+        Points.Add(topLaneThreeSpawnPoint);
+        Points.Add(middleLaneThreeSpawnPoint);
+        Points.Add(bottomLaneThreeSpawnPoint);
+        // Lane Four
+        Points.Add(topLaneFourSpawnPoint);
+        Points.Add(middleLaneFourSpawnPoint);
+        Points.Add(bottomLaneFourSpawnPoint);
+        // Lane Five
+        Points.Add(topLaneFiveSpawnPoint);
+        Points.Add(middleLaneFiveSpawnPoint);
+        Points.Add(bottomLaneFiveSpawnPoint);
+
+        // Adds all Objects to the Obstacles List
+        Obstacles.Add(Wall);
+        Obstacles.Add(PointsPowerUp);
+        Obstacles.Add(BreakPowerUp);
+        Obstacles.Add(SlowPowerUp);
+        Obstacles.Add(AttractPowerUp);
+    }
+
+    public GameObject GetPowerUp(int powerUpIndexNumber)
     {
         return Obstacles[powerUpIndexNumber]; // max is exclusive
     }
