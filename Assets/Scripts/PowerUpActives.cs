@@ -32,6 +32,7 @@ public class PowerUpActives : MonoBehaviour {
                 buffTimer = 2f;
                 GamePlayManager.slowPowerUps--;
                 GamePlayManager.points += 50;
+                this.GetComponent<ParticleSystemsManager>().SpawnBlueParticleEffect();
 
                 ParticleSystemsManager.UpdateDraft();
             }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParticleSystemsManager : MonoBehaviour {
 
     public GameObject draft;
+    public GameObject BluePE;
 
     public static int previouslevel;
 
@@ -32,7 +33,13 @@ public class ParticleSystemsManager : MonoBehaviour {
 		ParticleSystem ps = obj.GetComponent<ParticleSystem>();
 		var main = ps.main;
 		main.startSpeed = GamePlayManager.speed;
-		particleSystems.Add (obj);
+		particleSystems.Add(obj);
+    }
+
+    public void SpawnBlueParticleEffect()
+    {
+        GameObject obj = Instantiate(BluePE,transform);
+        particleSystems.Add(obj);
     }
 
 	public static void UpdateDraft() {
